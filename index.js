@@ -22,8 +22,8 @@ program.version(packageJson.version, '-v, --version')
       ]).then((answers) => {
         const spinner = ora('正在下载模板...');
         spinner.start();
-        const template = 'https://github.com/long-zhuge/td-taro.git';
-        download(template, name, { clone: true }, (err) => {
+        const template = 'https://github.com:long-zhuge/td-taro#main';
+        download(template, name, (err) => {
           if(err){
             spinner.fail();
             console.log(symbols.error, chalk.red(err));
